@@ -4,19 +4,27 @@
   "description": "LogiChain360 backend server with Express, Socket.IO, Redis, and MongoDB",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "dev": "nodemon index.js",
-  "lint": "eslint .",
-  "test": "echo \"No tests yet\" && exit 0"
-},
-  "keywords": ["logistics", "blockchain", "gps-tracking", "express", "socket.io"],
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "logistics",
+    "blockchain",
+    "gps-tracking",
+    "express",
+    "socket.io"
+  ],
   "author": "Rangesh",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
+    "ethers": "^6.16.0",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
@@ -26,6 +34,12 @@
     "node-cron": "^4.2.1",
     "redis": "^5.10.0",
     "socket.io": "^4.8.3",
+    "stripe": "^20.1.0",
+    "uuid": "^13.0.0",
     "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "nodemon": "^3.1.11"
   }
 }

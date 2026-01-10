@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DocumentRegistry",
+  "sourceName": "contracts/DocumentRegistry.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220c6506d2ce28f1017dc4ee9419122927bf370e170b561320982cf83511af8e8c664736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c6506d2ce28f1017dc4ee9419122927bf370e170b561320982cf83511af8e8c664736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,3 +1,11 @@
+const dns = require("node:dns");
+dns.setDefaultResultOrder("ipv4first");
+try {
+  dns.setServers(["8.8.8.8", "8.8.4.4"]);
+} catch (e) {
+  console.error("Failed to set custom DNS servers", e);
+}
+
 require("dotenv").config();
 const http = require("http");
 const app = require("./app");
@@ -11,4 +19,3 @@ const server = http.createServer(app);
 server.listen(PORT, () => {
   console.log(`🚀 LogiChain360 backend running on port ${PORT}`);
 });
-
