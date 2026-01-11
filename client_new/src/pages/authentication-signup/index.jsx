@@ -63,12 +63,7 @@ const AuthenticationSignup = () => {
                                     currentLanguage={currentLanguage}
                                 />
 
-                                <div className="mt-6 md:mt-8">
-                                    <LanguageToggle
-                                        currentLanguage={currentLanguage}
-                                        onLanguageChange={handleLanguageChange}
-                                    />
-                                </div>
+
                             </div>
 
                             <div className="mt-6 md:mt-8">
