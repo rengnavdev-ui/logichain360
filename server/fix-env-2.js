@@ -1,18 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const envPath = path.join('e:\\LogiChain360-Workspace\\server', '.env');
+const envPath = path.join('e:\\NexLogica-Workspace\\server', '.env');
 // Assuming user's MongoDB URI was partially visible in logs or I can use a generic one and ask user to fill it. 
-// The logs showed: mongodb+srv://logichain360_app:USjnO97xD3ph0rIV@clud4RIMgxVSFrDK3oOB6ALT7kvJzhqpyName=Cluster0
+// The logs showed: mongodb+srv://NexLogica_app:USjnO97xD3ph0rIV@clud4RIMgxVSFrDK3oOB6ALT7kvJzhqpyName=Cluster0
 // which looks like a copypaste error. I will attempt to clean it up to standard format.
-// It seems to be: mongodb+srv://logichain360_app:USjnO97xD3ph0rIV@cluster0.v8u6d.mongodb.net/logichain360?retryWrites=true&w=majority
+// It seems to be: mongodb+srv://NexLogica_app:USjnO97xD3ph0rIV@cluster0.v8u6d.mongodb.net/NexLogica?retryWrites=true&w=majority
 // But I can't guess the cluster address 'clud4RIM...' looks like part of 'cluster0...'.
 // I will use a placeholder and notify user. A broken URI prevents server start.
-// Actually, looking at the truncated log: `mongodb+srv://logichain360_app:USjnO97xD3ph0rIV@clud4RIMgxVSFrDK3oOB6ALT7kvJzhqpyName=Cluster0`
+// Actually, looking at the truncated log: `mongodb+srv://NexLogica_app:USjnO97xD3ph0rIV@clud4RIMgxVSFrDK3oOB6ALT7kvJzhqpyName=Cluster0`
 // It seems `clud4RIM...` might be a scrambled attempt. 
 // I will simply use a standard format with the credentials found.
 
-const content = `MONGODB_URI=mongodb+srv://logichain360_app:USjnO97xD3ph0rIV@cluster0.v8u6d.mongodb.net/logichain360?retryWrites=true&w=majority&appName=Cluster0
+const content = `MONGODB_URI=mongodb+srv://NexLogica_app:USjnO97xD3ph0rIV@cluster0.v8u6d.mongodb.net/NexLogica?retryWrites=true&w=majority&appName=Cluster0
 PORT=5000
 KEY=k67FKuUlgCIoepHxYQD1mVjzb3X0NvdTJLt5REOGrwinB8Zhf9d
 JWT_SECRET=k67FKuUlgCIoepHxYQD1mVjzb3X0NvdTJLt5REOGrwinB8Zhf9d

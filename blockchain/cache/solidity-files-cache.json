@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "E:\\LogiChain360-Workspace\\blockchain\\contracts\\DeliveryEscrow.sol": {
+    "E:\\NexLogica-Workspace\\blockchain\\contracts\\DeliveryEscrow.sol": {
       "lastModificationDate": 1768078347035,
       "contentHash": "b0fa5d8076e40a14f2f1d2229d8daf59",
       "sourceName": "contracts/DeliveryEscrow.sol",
@@ -36,7 +36,7 @@
         "DeliveryEscrow"
       ]
     },
-    "E:\\LogiChain360-Workspace\\blockchain\\contracts\\DocumentRegistry.sol": {
+    "E:\\NexLogica-Workspace\\blockchain\\contracts\\DocumentRegistry.sol": {
       "lastModificationDate": 1768038009405,
       "contentHash": "7de6e23a84ef6ff2fce58dfd7614a512",
       "sourceName": "contracts/DocumentRegistry.sol",
@@ -71,7 +71,7 @@
         "DocumentRegistry"
       ]
     },
-    "E:\\LogiChain360-Workspace\\blockchain\\contracts\\GreenToken.sol": {
+    "E:\\NexLogica-Workspace\\blockchain\\contracts\\GreenToken.sol": {
       "lastModificationDate": 1768038007174,
       "contentHash": "7a29564155ddabb8a9c3de78944af3d2",
       "sourceName": "contracts/GreenToken.sol",

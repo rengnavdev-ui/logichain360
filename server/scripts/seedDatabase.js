@@ -12,7 +12,7 @@ const Shipment = require('../models/Shipment');
 const seedDatabase = async () => {
     try {
         console.log('📦 Starting database seed...');
-        
+
         // Connect to MongoDB
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('✅ Connected to MongoDB');
@@ -27,7 +27,7 @@ const seedDatabase = async () => {
         // ============================================
         const users = [
             {
-                email: 'admin@logichain360.com',
+                email: 'admin@NexLogica.com',
                 password: 'admin123',
                 name: 'Admin User',
                 role: 'admin',
@@ -35,7 +35,7 @@ const seedDatabase = async () => {
                 isActive: true
             },
             {
-                email: 'manager@logichain360.com',
+                email: 'manager@NexLogica.com',
                 password: 'manager123',
                 name: 'Manager User',
                 role: 'manager',
@@ -43,7 +43,7 @@ const seedDatabase = async () => {
                 isActive: true
             },
             {
-                email: 'driver1@logichain360.com',
+                email: 'driver1@NexLogica.com',
                 password: 'driver123',
                 name: 'Rajesh Kumar',
                 role: 'driver',
@@ -55,7 +55,7 @@ const seedDatabase = async () => {
                 }
             },
             {
-                email: 'driver2@logichain360.com',
+                email: 'driver2@NexLogica.com',
                 password: 'driver123',
                 name: 'Amit Singh',
                 role: 'driver',
@@ -67,7 +67,7 @@ const seedDatabase = async () => {
                 }
             },
             {
-                email: 'driver3@logichain360.com',
+                email: 'driver3@NexLogica.com',
                 password: 'driver123',
                 name: 'Priya Sharma',
                 role: 'driver',
@@ -96,12 +96,12 @@ const seedDatabase = async () => {
         for (let i = 1; i <= 25; i++) {
             const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
             const randomDriver = drivers[Math.floor(Math.random() * drivers.length)];
-            
+
             const pickup = {
                 lat: 28.5 + Math.random() * 0.3,
                 lng: 77.0 + Math.random() * 0.5
             };
-            
+
             const dropoff = {
                 lat: 28.5 + Math.random() * 0.3,
                 lng: 77.0 + Math.random() * 0.5
@@ -152,13 +152,13 @@ const seedDatabase = async () => {
             const count = createdShipments.filter(s => s.status === status).length;
             console.log(`     - ${status}: ${count}`);
         });
-        
+
         console.log('\n🎉 Database seeded successfully!');
         console.log('\n📝 Test Credentials:');
-        console.log('   Admin:   admin@logichain360.com / admin123');
-        console.log('   Manager: manager@logichain360.com / manager123');
-        console.log('   Driver:  driver1@logichain360.com / driver123');
-        
+        console.log('   Admin:   admin@NexLogica.com / admin123');
+        console.log('   Manager: manager@NexLogica.com / manager123');
+        console.log('   Driver:  driver1@NexLogica.com / driver123');
+
         process.exit(0);
     } catch (error) {
         console.error('❌ Seeding failed:', error);

@@ -14,33 +14,11 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const [simulatedRole, setSimulatedRole] = useState(localStorage.getItem('userRole') || 'visitor');
-
-    const handleRoleSimulation = (role) => {
-        setSimulatedRole(role);
-        if (role === 'visitor') {
-            localStorage.removeItem('userRole');
-            localStorage.removeItem('authToken');
-        } else {
-            localStorage.setItem('userRole', role);
-            localStorage.setItem('authToken', `simulated-token-${role}`);
-        }
-    };
-
     const navLinks = [
         { name: 'Features', href: '#features' },
         { name: 'How it works', href: '#how-it-works' },
         { name: 'Get started', href: '#get-started' }
     ];
-
-    const getDashboardPath = () => {
-        const paths = {
-            admin: '/admin-dashboard',
-            manager: '/manager-dashboard',
-            driver: '/driver-pwa-app'
-        };
-        return paths[simulatedRole] || '/authentication-login';
-    };
 
     return (
         <header
@@ -54,7 +32,7 @@ const Header = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <span className="text-xl font-heading font-black text-white tracking-tighter uppercase whitespace-nowrap">LogiChain360</span>
+                    <span className="text-xl font-heading font-black text-white tracking-tighter uppercase whitespace-nowrap">NexLogica</span>
                 </Link>
 
                 <nav className="hidden lg:flex items-center gap-12">
@@ -70,35 +48,19 @@ const Header = () => {
                 </nav>
 
                 <div className="flex items-center gap-8">
-                    {/* Role Simulator - Styled Subtly */}
-                    <div className="hidden xl:block">
-                        <select
-                            value={simulatedRole}
-                            onChange={(e) => handleRoleSimulation(e.target.value)}
-                            className="bg-white/5 border border-white/10 rounded-full px-5 py-2 text-[10px] font-black text-gray-500 uppercase tracking-widest outline-none focus:border-primary/50 transition-colors cursor-pointer backdrop-blur-md"
-                        >
-                            <option value="visitor" className="bg-[#0B0F1A]">Visitor</option>
-                            <option value="driver" className="bg-[#0B0F1A]">Driver</option>
-                            <option value="manager" className="bg-[#0B0F1A]">Manager</option>
-                            <option value="admin" className="bg-[#0B0F1A]">Admin</option>
-                        </select>
-                    </div>
-
                     <button
                         className="text-[11px] font-black text-gray-400 hover:text-white uppercase tracking-[0.2em] transition-colors"
-                        onClick={() => navigate(simulatedRole === 'visitor' ? '/authentication-login' : getDashboardPath())}
+                        onClick={() => navigate('/authentication-login')}
                     >
-                        {simulatedRole === 'visitor' ? 'Sign in' : 'Dashboard'}
+                        Sign in
                     </button>
 
-                    {simulatedRole === 'visitor' && (
-                        <button
-                            className="px-6 py-3 bg-primary text-white font-heading font-black rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 transition-all shadow-[0_10px_30px_rgba(59,130,246,0.3)]"
-                            onClick={() => navigate('/authentication-signup')}
-                        >
-                            Start building
-                        </button>
-                    )}
+                    <button
+                        className="px-6 py-3 bg-primary text-white font-heading font-black rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 transition-all shadow-[0_10px_30px_rgba(59,130,246,0.3)]"
+                        onClick={() => navigate('/authentication-signup')}
+                    >
+                        Start building
+                    </button>
                 </div>
             </div>
         </header>

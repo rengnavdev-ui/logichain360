@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const envPath = path.join('e:\\LogiChain360-Workspace\\server', '.env');
+const envPath = path.join('e:\\NexLogica-Workspace\\server', '.env');
 
 // Using the exact URI provided by the user
-const content = `MONGODB_URI=mongodb+srv://logichain360_app:5HoXuIbXA5otLLgi@cluster0.6qcqjvk.mongodb.net/?appName=Cluster0
+const content = `MONGODB_URI=mongodb+srv://NexLogica_app:5HoXuIbXA5otLLgi@cluster0.6qcqjvk.mongodb.net/?appName=Cluster0
 PORT=5000
 KEY=k67FKuUlgCIoepHxYQD1mVjzb3X0NvdTJLt5REOGrwinB8Zhf9d
 JWT_SECRET=k67FKuUlgCIoepHxYQD1mVjzb3X0NvdTJLt5REOGrwinB8Zhf9d

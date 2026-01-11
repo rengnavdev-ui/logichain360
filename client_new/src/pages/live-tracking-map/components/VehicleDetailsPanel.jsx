@@ -16,13 +16,13 @@ const VehicleDetailsPanel = ({ vehicle, onClose }) => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-            <StatusIndicator status={vehicle?.status === 'On Route' ? 'success' : 'warning'} label={vehicle?.status} />
-            <button 
-                onClick={onClose}
-                className="p-2 hover:bg-muted/30 rounded-xl transition-colors"
-            >
-                <Icon name="X" size={20} />
-            </button>
+          <StatusIndicator status={vehicle?.status === 'On Route' ? 'success' : 'warning'} label={vehicle?.status} />
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-muted/30 rounded-xl transition-colors"
+          >
+            <Icon name="X" size={20} />
+          </button>
         </div>
       </div>
 

@@ -25,9 +25,9 @@ const LoginForm = ({ onLanguageChange, currentLanguage }) => {
   ];
 
   const mockCredentials = {
-    admin: { email: 'admin@logichain360.com', password: 'Admin@2025' },
-    manager: { email: 'manager@logichain360.com', password: 'Manager@2025' },
-    driver: { email: 'driver@logichain360.com', password: 'Driver@2025' }
+    admin: { email: 'admin@NexLogica.com', password: 'Admin@2025' },
+    manager: { email: 'manager@NexLogica.com', password: 'Manager@2025' },
+    driver: { email: 'driver@NexLogica.com', password: 'Driver@2025' }
   };
 
   const validateEmail = (email) => {

@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.get("/", (req, res) => {
   res.status(200).json({
     status: "ok",
-    project: "LogiChain360",
+    project: "NexLogica",
     message: "Backend is running",
     timestamp: new Date().toISOString()
   });

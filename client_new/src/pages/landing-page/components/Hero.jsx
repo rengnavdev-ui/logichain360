@@ -49,7 +49,7 @@ const Hero = () => {
                         variants={itemVariants}
                         className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-body"
                     >
-                        Describe what you want. Watch LogiChain360 assemble your shipments,
+                        Describe what you want. Watch NexLogica assemble your shipments,
                         optimize your routes, and manage your fleet in seconds.
                     </motion.p>
 

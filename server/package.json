@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "LogiChain360 backend server with Express, Socket.IO, Redis, and MongoDB",
+  "description": "NexLogica backend server with Express, Socket.IO, Redis, and MongoDB",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

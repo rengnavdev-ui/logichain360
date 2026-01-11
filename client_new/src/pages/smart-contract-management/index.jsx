@@ -44,12 +44,12 @@ const SmartContractManagement = () => {
   return (
     <>
       <Helmet>
-        <title>Smart Contract Management - LogiChain360</title>
+        <title>Smart Contract Management - NexLogica</title>
         <meta name="description" content="Automated logistics contract management with Solidity editor, template library, and decentralized dispute resolution center." />
       </Helmet>
       <div className="min-h-screen bg-background">
         <RoleBasedNavigation userRole="manager" connectionStatus="connected" />
-        
+
         <main className="pt-20 pb-24 px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
@@ -57,11 +57,11 @@ const SmartContractManagement = () => {
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">Smart Contract Center</h1>
                 <p className="text-sm md:text-base text-muted-foreground">Automated trust and transparency for global logistics</p>
               </div>
-              
-              <WalletConnection 
+
+              <WalletConnection
                 onConnect={() => {
-                    setIsWalletConnected(true);
-                    addNotification({ type: 'success', title: 'Wallet Connected', message: 'Ready for blockchain operations' });
+                  setIsWalletConnected(true);
+                  addNotification({ type: 'success', title: 'Wallet Connected', message: 'Ready for blockchain operations' });
                 }}
                 isConnected={isWalletConnected}
               />
@@ -75,9 +75,9 @@ const SmartContractManagement = () => {
                   onClick={() => setActiveTab(tab?.id)}
                   className={`
                     flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap
-                    ${activeTab === tab?.id 
-                        ? 'bg-primary text-primary-foreground shadow-glow-sm' 
-                        : 'bg-surface border border-border text-muted-foreground hover:border-primary/50'}
+                    ${activeTab === tab?.id
+                      ? 'bg-primary text-primary-foreground shadow-glow-sm'
+                      : 'bg-surface border border-border text-muted-foreground hover:border-primary/50'}
                   `}
                 >
                   <Icon name={tab?.icon} size={18} />
@@ -98,9 +98,9 @@ const SmartContractManagement = () => {
         </main>
 
         <QuickActionButton userRole="manager" onAction={(action) => addNotification({ type: 'info', title: 'Action Initiated', message: `Starting ${action}...` })} />
-        <ToastNotification 
-            notifications={notifications} 
-            onDismiss={(id) => setNotifications(prev => prev?.filter(n => n?.id !== id))} 
+        <ToastNotification
+          notifications={notifications}
+          onDismiss={(id) => setNotifications(prev => prev?.filter(n => n?.id !== id))}
         />
 
         {isDeploying && <DeploymentWizard onClose={() => setIsDeploying(false)} />}

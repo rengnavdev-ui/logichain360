@@ -16,7 +16,7 @@ const LandingPage = () => {
     return (
         <div className="min-h-screen bg-[#0A0D14] relative overflow-hidden font-body selection:bg-primary selection:text-black">
             <Helmet>
-                <title>LogiChain360 | Global Logistics Intelligence</title>
+                <title>NexLogica | Global Logistics Intelligence</title>
                 <meta name="description" content="Industrial-grade logistics intelligence, blockchain persistence, and real-time AI optimization. Built for the future of global trade." />
             </Helmet>
 

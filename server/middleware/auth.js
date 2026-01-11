@@ -16,7 +16,7 @@ const generateToken = (user) => {
 
     return jwt.sign(
         payload,
-        process.env.JWT_SECRET || 'logichain360-secret-key-change-in-production',
+        process.env.JWT_SECRET || 'NexLogica-secret-key-change-in-production',
         { expiresIn: '7d' }
     );
 };
@@ -29,7 +29,7 @@ const authenticate = async (req, res, next) => {
     try {
         // Get token from Authorization header
         const authHeader = req.headers.authorization;
-        
+
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(401).json({
                 success: false,
@@ -42,7 +42,7 @@ const authenticate = async (req, res, next) => {
         // Verify token
         const decoded = jwt.verify(
             token,
-            process.env.JWT_SECRET || 'logichain360-secret-key-change-in-production'
+            process.env.JWT_SECRET || 'NexLogica-secret-key-change-in-production'
         );
 
         // Get user from database

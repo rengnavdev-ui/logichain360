@@ -1,7 +1,7 @@
 {
-  "name": "logichain360-blockchain",
+  "name": "NexLogica-blockchain",
   "version": "1.0.0",
-  "description": "Blockchain smart contracts for LogiChain360",
+  "description": "Blockchain smart contracts for NexLogica",
   "main": "index.js",
   "scripts": {
     "compile": "hardhat compile",
@@ -18,7 +18,7 @@
     "hardhat",
     "polygon"
   ],
-  "author": "LogiChain360",
+  "author": "NexLogica",
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",

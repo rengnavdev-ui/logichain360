@@ -25,13 +25,13 @@ function testEndpoint(path) {
 }
 
 async function main() {
-    console.log('🔍 Testing LogiChain360 Backend API...\n');
-    
+    console.log('🔍 Testing NexLogica Backend API...\n');
+
     await testEndpoint('/');
     await testEndpoint('/api');
     await testEndpoint('/api/shipments');
     await testEndpoint('/api/auth/me');
-    
+
     console.log('\n✅ API test complete!');
 }
 

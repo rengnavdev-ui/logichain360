@@ -44,32 +44,42 @@ const SignupForm = ({ onLanguageChange, currentLanguage }) => {
         e?.preventDefault();
         const newErrors = {};
 
-        if (!formData?.fullName) {
+        // Name validation
+        if (!formData?.fullName?.trim()) {
             newErrors.fullName = currentLanguage === 'hi' ? 'पूरा नाम आवश्यक है' : 'Full name is required';
+        } else if (formData?.fullName?.trim()?.length < 3) {
+            newErrors.fullName = currentLanguage === 'hi' ? 'नाम कम से कम 3 अक्षर का होना चाहिए' : 'Name must be at least 3 characters';
         }
 
+        // Email validation
         if (!formData?.email) {
             newErrors.email = currentLanguage === 'hi' ? 'ईमेल आवश्यक है' : 'Email is required';
         } else if (!validateEmail(formData?.email)) {
             newErrors.email = currentLanguage === 'hi' ? 'अमान्य ईमेल प्रारूप' : 'Invalid email format';
         }
 
+        // Password validation
         if (!formData?.password) {
             newErrors.password = currentLanguage === 'hi' ? 'पासवर्ड आवश्यक है' : 'Password is required';
         } else if (!validatePassword(formData?.password)) {
             newErrors.password = currentLanguage === 'hi' ? 'पासवर्ड कम से कम 8 अक्षर का होना चाहिए' : 'Password must be at least 8 characters';
         }
 
-        if (formData?.password !== formData?.confirmPassword) {
+        // Confirm Password validation
+        if (!formData?.confirmPassword) {
+            newErrors.confirmPassword = currentLanguage === 'hi' ? 'पासवर्ड की पुष्टि आवश्यक है' : 'Password confirmation is required';
+        } else if (formData?.password !== formData?.confirmPassword) {
             newErrors.confirmPassword = currentLanguage === 'hi' ? 'पासवर्ड मेल नहीं खाते' : 'Passwords do not match';
         }
 
+        // Role validation
         if (!formData?.role) {
             newErrors.role = currentLanguage === 'hi' ? 'भूमिका चयन आवश्यक है' : 'Role selection is required';
         }
 
         if (Object.keys(newErrors)?.length > 0) {
             setErrors(newErrors);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
 

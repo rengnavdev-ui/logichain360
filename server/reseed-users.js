@@ -9,12 +9,12 @@ function request(method, path, data = null) {
             port: 5000,
             path,
             method,
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Content-Length': Buffer.byteLength(body)
             }
         };
-        
+
         const req = http.request(options, (res) => {
             let resBody = '';
             res.on('data', chunk => resBody += chunk);
@@ -26,7 +26,7 @@ function request(method, path, data = null) {
                 }
             });
         });
-        
+
         req.on('error', (e) => resolve({ error: e.message }));
         if (data) req.write(body);
         req.end();
@@ -35,24 +35,24 @@ function request(method, path, data = null) {
 
 async function run() {
     console.log('🧹 Re-seeding test users via API...');
-    
+
     const users = [
-        { email: 'admin@logichain360.com', password: 'admin123', name: 'Admin User', role: 'admin' },
-        { email: 'manager@logichain360.com', password: 'manager123', name: 'Manager User', role: 'manager' },
-        { email: 'driver1@logichain360.com', password: 'driver123', name: 'Driver One', role: 'driver' }
+        { email: 'admin@NexLogica.com', password: 'admin123', name: 'Admin User', role: 'admin' },
+        { email: 'manager@NexLogica.com', password: 'manager123', name: 'Manager User', role: 'manager' },
+        { email: 'driver1@NexLogica.com', password: 'driver123', name: 'Driver One', role: 'driver' }
     ];
 
     // Note: Since we don't have a DELETE user API endpoint ready for public use, 
     // and we know the DB connection is Atlas, we'll try to register. 
     // If it fails with "already registered", we'll use a NEW user email for this trial 
     // to prove it works, or we can assume the user will manually clear the DB if they have access.
-    
+
     // Better: Let's create users with "v2" in their email if the original fails.
-    
+
     for (const user of users) {
         console.log(`\nRegistering ${user.email}...`);
         let res = await request('POST', '/api/auth/register', user);
-        
+
         if (res.status === 201) {
             console.log('✅ Created successfully');
         } else if (res.status === 400 && res.data.message === 'Email already registered') {

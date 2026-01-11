@@ -15,6 +15,7 @@ import SmartContractManagement from './pages/smart-contract-management';
 import AuthenticationSignup from './pages/authentication-signup';
 import LandingPage from './pages/landing-page';
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import DriverTracker from "./pages/driver-tracker";
 
 // Admin Detailed Pages
 import DemandSurgePage from './pages/admin-detailed-views/DemandSurgePage';
@@ -124,6 +125,15 @@ const Routes = () => {
             element={
               <ProtectedRoute allowedRoles={['admin', 'manager', 'driver']}>
                 <LiveTrackingMap />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/driver-tracker"
+            element={
+              <ProtectedRoute allowedRoles={['driver', 'admin']}>
+                <DriverTracker />
               </ProtectedRoute>
             }
           />

@@ -18,7 +18,7 @@ const BrandingSection = ({ currentLanguage }) => {
             <Icon name="Truck" size={32} color="var(--color-primary)" />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            LogiChain360
+            NexLogica
           </h1>
         </div>
 
@@ -33,17 +33,17 @@ const BrandingSection = ({ currentLanguage }) => {
 
         <div className="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {[
-          { icon: 'Brain', label: currentLanguage === 'hi' ? 'AI अंतर्दृष्टि' : 'AI Insights' },
-          { icon: 'Shield', label: currentLanguage === 'hi' ? 'ब्लॉकचेन' : 'Blockchain' },
-          { icon: 'MapPin', label: currentLanguage === 'hi' ? 'लाइव ट्रैकिंग' : 'Live Tracking' }]?.
-          map((item, index) =>
-          <div key={index} className="flex flex-col items-center gap-2 md:gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center">
-                <Icon name={item?.icon} size={20} color="var(--color-primary)" />
+            { icon: 'Brain', label: currentLanguage === 'hi' ? 'AI अंतर्दृष्टि' : 'AI Insights' },
+            { icon: 'Shield', label: currentLanguage === 'hi' ? 'ब्लॉकचेन' : 'Blockchain' },
+            { icon: 'MapPin', label: currentLanguage === 'hi' ? 'लाइव ट्रैकिंग' : 'Live Tracking' }]?.
+            map((item, index) =>
+              <div key={index} className="flex flex-col items-center gap-2 md:gap-3">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 backdrop-blur-sm flex items-center justify-center">
+                  <Icon name={item?.icon} size={20} color="var(--color-primary)" />
+                </div>
+                <span className="text-xs md:text-sm font-medium text-foreground">{item?.label}</span>
               </div>
-              <span className="text-xs md:text-sm font-medium text-foreground">{item?.label}</span>
-            </div>
-          )}
+            )}
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />

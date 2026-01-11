@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
                     <div className="space-y-8">
                         <Link to="/" className="flex items-center gap-3">
-                            <span className="text-2xl font-heading font-black text-white tracking-tighter uppercase">LogiChain360</span>
+                            <span className="text-2xl font-heading font-black text-white tracking-tighter uppercase">NexLogica</span>
                         </Link>
                         <p className="text-gray-500 leading-relaxed font-body text-[16px]">
                             Industrial-grade logistics intelligence,
@@ -78,7 +78,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-[13px] text-gray-600 font-bold uppercase tracking-widest">
-                    <p>© {new Date().getFullYear()} LogiChain360. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} NexLogica. All rights reserved.</p>
                     <div className="flex items-center gap-10">
                         <a href="#" className="hover:text-white transition-colors">Privacy</a>
                         <a href="#" className="hover:text-white transition-colors">Terms</a>

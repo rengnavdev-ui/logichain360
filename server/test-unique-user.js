@@ -10,7 +10,7 @@ function request(method, path, data = null) {
             method,
             headers: { 'Content-Type': 'application/json' }
         };
-        
+
         const req = http.request(options, (res) => {
             let body = '';
             res.on('data', chunk => body += chunk);
@@ -22,7 +22,7 @@ function request(method, path, data = null) {
                 }
             });
         });
-        
+
         req.on('error', (e) => resolve({ error: e.message }));
         if (data) req.write(JSON.stringify(data));
         req.end();
@@ -30,9 +30,9 @@ function request(method, path, data = null) {
 }
 
 async function test() {
-    const uniqueEmail = `user_${Date.now()}@logichain360.com`;
+    const uniqueEmail = `user_${Date.now()}@NexLogica.com`;
     console.log('🧪 Testing with unique email:', uniqueEmail);
-    
+
     // 1. Register new user
     console.log('\n1️⃣ Registering...');
     const regResult = await request('POST', '/api/auth/register', {
@@ -43,11 +43,11 @@ async function test() {
     });
     console.log(`   Status: ${regResult.status}`);
     console.log(`   Response:`, JSON.stringify(regResult.data, null, 2).substring(0, 500));
-    
+
     if (regResult.status === 201 && regResult.data?.data?.token) {
         console.log('\n✅ REGISTRATION SUCCESS!');
         console.log('   Token:', regResult.data.data.token.substring(0, 50) + '...');
-        
+
         // 2. Now login
         console.log('\n2️⃣ Logging in...');
         const loginResult = await request('POST', '/api/auth/login', {
@@ -55,7 +55,7 @@ async function test() {
             password: 'password123'
         });
         console.log(`   Status: ${loginResult.status}`);
-        
+
         if (loginResult.data?.data?.token) {
             console.log('   ✅ LOGIN SUCCESS!');
             console.log('   Token:', loginResult.data.data.token.substring(0, 50) + '...');

@@ -19,8 +19,9 @@ class GPSService {
     // Update driver's current position in database
     await User.findByIdAndUpdate(driverId, {
       currentLocation: {
-        type: 'Point',
-        coordinates: [lng, lat] // [longitude, latitude] for MongoDB GeoJSON
+        lat,
+        lng,
+        updatedAt: new Date()
       },
       lastSeen: new Date(),
       speed,
@@ -31,11 +32,11 @@ class GPSService {
     const shouldLog = this.shouldLogGPSPoint(driverId, timestamp);
     if (shouldLog) {
       await GPSLog.create({
-        driver: driverId,
-        location: {
-          type: 'Point',
-          coordinates: [lng, lat]
-        },
+        driverId,
+        trackingId: `TRK-${driverId?.toString()?.slice(-4)}`, // Fallback tracking id
+        vehicleId: 'VH-DEFAULT', // Fallback vehicle id
+        lat,
+        lng,
         speed,
         heading,
         accuracy,
@@ -71,7 +72,7 @@ class GPSService {
   shouldLogGPSPoint(driverId, timestamp) {
     const lastLog = this.activeDrivers.get(driverId);
     if (!lastLog) return true;
-    
+
     const timeDiff = timestamp - lastLog.timestamp;
     return timeDiff >= 30000; // 30 seconds
   }
@@ -99,8 +100,8 @@ class GPSService {
     }).sort({ timestamp: 1 });
 
     return logs.map(log => ({
-      lat: log.location.coordinates[1],
-      lng: log.location.coordinates[0],
+      lat: log.lat,
+      lng: log.lng,
       speed: log.speed,
       timestamp: log.timestamp
     }));

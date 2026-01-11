@@ -9,13 +9,17 @@ try {
 require("dotenv").config();
 const http = require("http");
 const app = require("./app");
+const socket = require("./socket");
 
 const PORT = process.env.PORT || 3000;
 
 // Create HTTP server
 const server = http.createServer(app);
 
+// Initialize Socket.io
+socket.init(server);
+
 // Start server
 server.listen(PORT, () => {
-  console.log(`🚀 LogiChain360 backend running on port ${PORT}`);
+  console.log(`🚀 NexLogica backend running on port ${PORT}`);
 });

@@ -1,5 +1,5 @@
 Write-Host "=============================================" -ForegroundColor Cyan
-Write-Host "LogiChain360 FINAL PRE-FLIGHT CHECK" -ForegroundColor Cyan
+Write-Host "NexLogica FINAL PRE-FLIGHT CHECK" -ForegroundColor Cyan
 Write-Host "=============================================" -ForegroundColor Cyan
 Write-Host ""
 

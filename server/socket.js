@@ -7,7 +7,7 @@ module.exports = {
   init: (server) => {
     io = socketIo(server, {
       cors: {
-        origin: 'http://localhost:5173',
+        origin: process.env.CORS_ORIGIN || 'http://localhost:4028',
         methods: ['GET', 'POST']
       }
     });
@@ -19,7 +19,7 @@ module.exports = {
       socket.on('gps:stream', async (data) => {
         try {
           const { driverId, lat, lng, speed, heading, accuracy, timestamp } = data;
-          
+
           // Process GPS update
           await gpsService.handleGPSUpdate(driverId, {
             lat,

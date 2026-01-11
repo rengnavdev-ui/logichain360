@@ -38,12 +38,12 @@ const AIInsightsAnalytics = () => {
 
   const handleQuickAction = (action) => {
     if (action === 'create-shipment') {
-        setActiveModal('shipment');
-        return;
+      setActiveModal('shipment');
+      return;
     }
     if (action === 'add-driver') {
-        setActiveModal('driver');
-        return;
+      setActiveModal('driver');
+      return;
     }
 
     const actionNotifications = {
@@ -70,24 +70,24 @@ const AIInsightsAnalytics = () => {
   };
 
   const handleApplyAction = (action) => {
-      setSelectedAction(action);
-      setActiveDrawer('apply');
+    setSelectedAction(action);
+    setActiveDrawer('apply');
   };
 
   const handleInsightClick = (insight) => {
-      setSelectedInsight(insight);
-      setActiveModal('insight');
+    setSelectedInsight(insight);
+    setActiveModal('insight');
   };
 
   const onConfirmApply = () => {
-      setActiveDrawer(null);
-      setNotifications(prev => [...prev, {
-          id: Date.now(),
-          type: 'success',
-          title: 'Action Applied Successfully',
-          message: `AI recommendation #${selectedAction.id} has been executed.`,
-          duration: 5000
-      }]);
+    setActiveDrawer(null);
+    setNotifications(prev => [...prev, {
+      id: Date.now(),
+      type: 'success',
+      title: 'Action Applied Successfully',
+      message: `AI recommendation #${selectedAction.id} has been executed.`,
+      duration: 5000
+    }]);
   };
 
   const handleDismissNotification = (id) => {
@@ -97,12 +97,12 @@ const AIInsightsAnalytics = () => {
   return (
     <>
       <Helmet>
-        <title>AI Insights Analytics - LogiChain360</title>
+        <title>AI Insights Analytics - NexLogica</title>
         <meta name="description" content="Advanced predictive analytics and machine learning-powered recommendations for strategic logistics optimization and operational intelligence" />
       </Helmet>
-      
+
       <RoleBasedNavigation userRole="admin" connectionStatus="connected" />
-      
+
       <div className="min-h-screen bg-background pt-20 pb-8 px-4 md:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
@@ -115,7 +115,7 @@ const AIInsightsAnalytics = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-               {/* Date Range Dropdown */}
+              {/* Date Range Dropdown */}
               <div className="flex items-center gap-2 bg-surface border border-border rounded-xl px-4 py-2 hover:border-primary/50 transition-colors cursor-pointer group">
                 <Icon name="Calendar" size={18} color="var(--color-primary)" />
                 <select
@@ -128,19 +128,19 @@ const AIInsightsAnalytics = () => {
                   <option value="90days">Last 90 Days</option>
                 </select>
                 <div className="absolute right-3 pointer-events-none group-hover:translate-y-0.5 transition-transform">
-                    <Icon name="ChevronDown" size={14} />
+                  <Icon name="ChevronDown" size={14} />
                 </div>
               </div>
 
-               {/* CSV Export */}
-               <div className="flex items-center gap-2 bg-surface border border-border rounded-xl px-4 py-2 hover:border-secondary/50 transition-colors cursor-pointer relative group">
+              {/* CSV Export */}
+              <div className="flex items-center gap-2 bg-surface border border-border rounded-xl px-4 py-2 hover:border-secondary/50 transition-colors cursor-pointer relative group">
                 <Icon name="Download" size={18} color="var(--color-secondary)" />
-                 <span className="text-sm font-medium">CSV Data</span>
-                 <div className="absolute top-full right-0 mt-2 w-48 bg-surface border border-border rounded-xl shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-20 flex flex-col p-2">
-                     <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Insights Raw Data</button>
-                     <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Prediction Logs</button>
-                     <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Cost Calculations</button>
-                 </div>
+                <span className="text-sm font-medium">CSV Data</span>
+                <div className="absolute top-full right-0 mt-2 w-48 bg-surface border border-border rounded-xl shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-20 flex flex-col p-2">
+                  <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Insights Raw Data</button>
+                  <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Prediction Logs</button>
+                  <button className="text-left px-3 py-2 hover:bg-muted rounded-lg text-sm" onClick={() => handleQuickAction('export-data')}>Cost Calculations</button>
+                </div>
               </div>
 
               <button
@@ -155,8 +155,8 @@ const AIInsightsAnalytics = () => {
 
           {/* AI Metrics Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 md:mb-8">
-             {/* ... Using existing HTML structure but wrapping in interactive div if needed ... */}
-             <div className="bg-surface border border-border rounded-2xl p-4 md:p-6 group hover:scale-[1.02] transition-transform cursor-pointer" onClick={() => handleInsightClick({ title: 'ML Accuracy Detail', priority: 'High', confidence: '94.2%' })}>
+            {/* ... Using existing HTML structure but wrapping in interactive div if needed ... */}
+            <div className="bg-surface border border-border rounded-2xl p-4 md:p-6 group hover:scale-[1.02] transition-transform cursor-pointer" onClick={() => handleInsightClick({ title: 'ML Accuracy Detail', priority: 'High', confidence: '94.2%' })}>
               <div className="flex items-center justify-between mb-3">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Icon name="Brain" size={24} color="var(--color-primary)" />
@@ -166,7 +166,7 @@ const AIInsightsAnalytics = () => {
               <p className="text-xs md:text-sm text-muted-foreground mb-1">ML Accuracy</p>
               <p className="text-2xl md:text-3xl font-bold">94.2%</p>
             </div>
-            
+
             <div className="bg-surface border border-border rounded-2xl p-4 md:p-6 group hover:scale-[1.02] transition-transform cursor-pointer">
               <div className="flex items-center justify-between mb-3">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-secondary/10 flex items-center justify-center">
@@ -204,15 +204,15 @@ const AIInsightsAnalytics = () => {
           <div className="space-y-6 md:space-y-8">
             <PredictiveDemandChart />
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2">
-                    <SmartRecommendations 
-                        onApplyAction={handleApplyAction} 
-                        onInsightClick={handleInsightClick} 
-                    />
-                </div>
-                <div className="lg:col-span-1">
-                    <DelayProbabilityMeter />
-                </div>
+              <div className="lg:col-span-2">
+                <SmartRecommendations
+                  onApplyAction={handleApplyAction}
+                  onInsightClick={handleInsightClick}
+                />
+              </div>
+              <div className="lg:col-span-1">
+                <DelayProbabilityMeter />
+              </div>
             </div>
             <ETAPredictionPanel />
             <PerformanceAnalytics />
@@ -231,7 +231,7 @@ const AIInsightsAnalytics = () => {
                   </p>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={() => setNotifications(prev => [...prev, {
                   id: Date.now() + Math.random(),
                   type: 'info',
@@ -248,21 +248,21 @@ const AIInsightsAnalytics = () => {
         </div>
       </div>
 
-      <ApplyActionDrawer 
-        isOpen={activeDrawer === 'apply'} 
+      <ApplyActionDrawer
+        isOpen={activeDrawer === 'apply'}
         onClose={() => setActiveDrawer(null)}
         actionData={selectedAction}
         onConfirm={onConfirmApply}
       />
-      
-      <NewShipmentModal 
-        isOpen={activeModal === 'shipment'} 
-        onClose={() => setActiveModal(null)} 
+
+      <NewShipmentModal
+        isOpen={activeModal === 'shipment'}
+        onClose={() => setActiveModal(null)}
       />
-      
-      <AddDriverModal 
-        isOpen={activeModal === 'driver'} 
-        onClose={() => setActiveModal(null)} 
+
+      <AddDriverModal
+        isOpen={activeModal === 'driver'}
+        onClose={() => setActiveModal(null)}
       />
 
       <InsightDetailModal

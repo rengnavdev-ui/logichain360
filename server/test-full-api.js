@@ -10,11 +10,11 @@ function makeRequest(method, path, data = null, token = null) {
             method,
             headers: { 'Content-Type': 'application/json' }
         };
-        
+
         if (token) {
             options.headers['Authorization'] = `Bearer ${token}`;
         }
-        
+
         const req = http.request(options, (res) => {
             let body = '';
             res.on('data', chunk => body += chunk);
@@ -30,12 +30,12 @@ function makeRequest(method, path, data = null, token = null) {
                 resolve({ status: res.statusCode, body });
             });
         });
-        
+
         req.on('error', (err) => {
             console.log(`ERROR: ${err.message}`);
             resolve({ error: err.message });
         });
-        
+
         if (data) {
             req.write(JSON.stringify(data));
         }
@@ -44,15 +44,15 @@ function makeRequest(method, path, data = null, token = null) {
 }
 
 async function test() {
-    console.log('🧪 Testing LogiChain360 API...\n');
-    
+    console.log('🧪 Testing NexLogica API...\n');
+
     // Test 1: Login as admin
     console.log('=== TEST 1: Admin Login ===');
     const loginResult = await makeRequest('POST', '/api/auth/login', {
-        email: 'admin_v2@logichain360.com',
+        email: 'admin_v2@NexLogica.com',
         password: 'admin123'
     });
-    
+
     let token;
     try {
         const loginData = JSON.parse(loginResult.body);
@@ -62,11 +62,11 @@ async function test() {
         console.log('❌ Login failed');
         return;
     }
-    
+
     // Test 2: Get shipments
     console.log('\n=== TEST 2: Fetch Shipments ===');
     await makeRequest('GET', '/api/shipments', null, token);
-    
+
     //Test 3: Create shipment
     console.log('\n=== TEST 3: Create Shipment ===');
     await makeRequest('POST', '/api/shipments', {
@@ -76,7 +76,7 @@ async function test() {
         price: 5000,
         vehicleType: 'truck'
     }, token);
-    
+
     console.log('\n✅ API test complete!');
 }
 

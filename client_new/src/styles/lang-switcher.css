@@ -1,0 +1,210 @@
+:root {
+  --fab-size: 56px;
+  --fab-bg: #2563eb;
+  --fab-icon-color: #ffffff;
+  --modal-bg: rgba(15, 15, 15, 0.85);
+  --modal-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --primary-glow: rgba(37, 99, 235, 0.5);
+}
+
+/* Floating Action Button */
+.lang-fab {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: var(--fab-size);
+  height: var(--fab-size);
+  background: var(--fab-bg);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-fab:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+}
+
+.lang-fab svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--fab-icon-color);
+}
+
+/* Modal Overlay */
+.lang-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Content */
+.lang-modal {
+  width: 90%;
+  max-width: 600px;
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border);
+  border-radius: 24px;
+  padding: 32px;
+  transform: scale(0.95) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-modal-overlay.open .lang-modal {
+  transform: scale(1) translateY(0);
+}
+
+.lang-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.lang-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.lang-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+/* Language Grid */
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-right: -8px;
+}
+
+/* Custom Scrollbar for Grid */
+.lang-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lang-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lang-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.lang-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.lang-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.lang-card.active {
+  border-color: var(--fab-bg);
+  background: rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+}
+
+.lang-native-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lang-english-name {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Hide Google Translate UI */
+.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .lang-fab {
+    bottom: 80px; /* Above bottom nav if present, or just higher */
+  }
+
+  .lang-modal-overlay {
+    align-items: flex-end;
+  }
+
+  .lang-modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 24px 24px 0 0;
+    margin: 0;
+    max-height: 80vh;
+    transform: translateY(100%);
+    border-bottom: none;
+  }
+
+  .lang-modal-overlay.open .lang-modal {
+    transform: translateY(0);
+  }
+}

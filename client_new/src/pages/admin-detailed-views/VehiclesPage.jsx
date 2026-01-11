@@ -15,13 +15,13 @@ const VehiclesPage = () => {
 
     return (
         <div className="min-h-screen bg-background p-6">
-            <Helmet><title>Fleet Vehicles - LogiChain360</title></Helmet>
-             <div className="max-w-7xl mx-auto">
-                 <div className="flex items-center gap-4 mb-8">
+            <Helmet><title>Fleet Vehicles - NexLogica</title></Helmet>
+            <div className="max-w-7xl mx-auto">
+                <div className="flex items-center gap-4 mb-8">
                     <Button variant="ghost" size="icon" onClick={() => navigate(-1)}><ArrowLeft className="w-6 h-6" /></Button>
                     <h1 className="text-2xl font-bold">Fleet Overview</h1>
                 </div>
-                 <div className="bg-card border border-border rounded-xl overflow-hidden">
+                <div className="bg-card border border-border rounded-xl overflow-hidden">
                     <table className="w-full text-sm">
                         <thead className="bg-muted/50">
                             <tr className="text-left">
@@ -31,16 +31,15 @@ const VehiclesPage = () => {
                                 <th className="p-4 font-medium">Current Location</th>
                             </tr>
                         </thead>
-                         <tbody className="divide-y divide-border">
+                        <tbody className="divide-y divide-border">
                             {vehicles.map((v) => (
                                 <tr key={v.id} className="hover:bg-muted/10">
                                     <td className="p-4 font-medium">{v.id}</td>
                                     <td className="p-4">{v.type}</td>
                                     <td className="p-4">
-                                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                            v.status === 'Active' ? 'bg-green-500/10 text-green-500' :
-                                            'bg-red-500/10 text-red-500'
-                                        }`}>{v.status}</span>
+                                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${v.status === 'Active' ? 'bg-green-500/10 text-green-500' :
+                                                'bg-red-500/10 text-red-500'
+                                            }`}>{v.status}</span>
                                     </td>
                                     <td className="p-4">{v.location}</td>
                                 </tr>

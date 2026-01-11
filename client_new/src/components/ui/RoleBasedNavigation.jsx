@@ -56,7 +56,7 @@ const RoleBasedNavigation = ({ userRole = 'admin', connectionStatus = 'connected
             <div className="navbar-logo-icon">
               <Icon name="Truck" size={24} color="var(--color-primary)" />
             </div>
-            <span className="navbar-logo-text">LogiChain360</span>
+            <span className="navbar-logo-text">NexLogica</span>
           </div>
 
           <div className="navbar-menu">
@@ -73,11 +73,23 @@ const RoleBasedNavigation = ({ userRole = 'admin', connectionStatus = 'connected
           </div>
 
           <div className="navbar-actions">
-            <div className="flex items-center gap-2">
-              <div className={`navbar-status-indicator ${connectionStatus}`} />
-              <span className="text-sm text-muted-foreground hidden sm:inline">
-                {connectionStatus === 'connected' ? 'Connected' : connectionStatus === 'syncing' ? 'Syncing...' : 'Disconnected'}
-              </span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className={`navbar-status-indicator ${connectionStatus}`} />
+                <span className="text-sm text-muted-foreground hidden sm:inline">
+                  {connectionStatus === 'connected' ? 'Connected' : connectionStatus === 'syncing' ? 'Syncing...' : 'Disconnected'}
+                </span>
+              </div>
+              <button
+                onClick={() => {
+                  localStorage.clear();
+                  navigate('/');
+                }}
+                className="navbar-menu-item text-red-500 hover:bg-red-500/10"
+              >
+                <Icon name="LogOut" size={18} className="inline-block mr-2" />
+                <span className="hidden md:inline">Logout</span>
+              </button>
             </div>
           </div>
         </div>
@@ -101,6 +113,16 @@ const RoleBasedNavigation = ({ userRole = 'admin', connectionStatus = 'connected
               {item?.label}
             </button>
           ))}
+          <button
+            onClick={() => {
+              localStorage.clear();
+              navigate('/');
+            }}
+            className="mobile-menu-item text-red-500 w-full text-left"
+          >
+            <Icon name="LogOut" size={20} className="inline-block mr-3" />
+            Logout
+          </button>
         </div>
       </div>
     </>

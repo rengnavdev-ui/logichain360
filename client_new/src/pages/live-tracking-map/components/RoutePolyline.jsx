@@ -1,28 +1,27 @@
 import React from 'react';
+import { Polyline } from 'react-leaflet';
 
 const RoutePolyline = ({ vehicle }) => {
-    // Mock route data relative to vehicle location
+    // In a real app, this would be the history of locations
+    // For now, we'll mock a small path behind the vehicle
     if (!vehicle || vehicle?.status !== 'On Route') return null;
 
+    const mockedHistory = [
+        [vehicle.location.lat - 0.01, vehicle.location.lng - 0.01],
+        [vehicle.location.lat - 0.005, vehicle.location.lng - 0.002],
+        [vehicle.location.lat, vehicle.location.lng]
+    ];
+
     return (
-        <svg className="absolute inset-0 pointer-events-none w-full h-full opacity-60">
-            <defs>
-                <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0" />
-                    <stop offset="50%" stopColor="var(--color-primary)" stopOpacity="1" />
-                    <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.5" />
-                </linearGradient>
-            </defs>
-            <path
-                d={`M ${vehicle?.location?.lat * 12} ${vehicle?.location?.lng * 8} L ${vehicle?.location?.lat * 12 + 100} ${vehicle?.location?.lng * 8 - 50} L ${vehicle?.location?.lat * 12 + 200} ${vehicle?.location?.lng * 8 + 20}`}
-                fill="none"
-                stroke="url(#routeGradient)"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeDasharray="8 12"
-                className="animate-route-flow"
-            />
-        </svg>
+        <Polyline
+            positions={mockedHistory}
+            pathOptions={{
+                color: 'var(--color-primary)',
+                weight: 4,
+                opacity: 0.6,
+                dashArray: '10, 10'
+            }}
+        />
     );
 };
 

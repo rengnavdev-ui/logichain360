@@ -23,8 +23,8 @@ const AuthenticationSignup = () => {
     return (
         <>
             <Helmet>
-                <title>Sign Up - LogiChain360 | AI-Powered Logistics Platform</title>
-                <meta name="description" content="Join LogiChain360 - Enterprise logistics platform with AI insights, blockchain verification, and real-time tracking" />
+                <title>Sign Up - NexLogica | AI-Powered Logistics Platform</title>
+                <meta name="description" content="Join NexLogica - Enterprise logistics platform with AI insights, blockchain verification, and real-time tracking" />
             </Helmet>
             <div className="min-h-screen bg-background">
                 <div className="grid lg:grid-cols-2 min-h-screen">
@@ -41,7 +41,7 @@ const AuthenticationSignup = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
                                     </div>
-                                    <h1 className="text-2xl md:text-3xl font-bold text-foreground">LogiChain360</h1>
+                                    <h1 className="text-2xl md:text-3xl font-bold text-foreground">NexLogica</h1>
                                 </div>
                                 <p className="text-center text-sm md:text-base text-muted-foreground">
                                     {currentLanguage === 'hi' ? 'AI + ब्लॉकचेन + रियल-टाइम लॉजिस्टिक्स' : 'AI + Blockchain + Real-Time Logistics'}
@@ -54,7 +54,7 @@ const AuthenticationSignup = () => {
                                         {currentLanguage === 'hi' ? 'खाता बनाएँ' : 'Create Account'}
                                     </h2>
                                     <p className="text-sm md:text-base text-muted-foreground">
-                                        {currentLanguage === 'hi' ? 'आज ही LogiChain360 परिवार में शामिल हों' : 'Join the LogiChain360 family today'}
+                                        {currentLanguage === 'hi' ? 'आज ही NexLogica परिवार में शामिल हों' : 'Join the NexLogica family today'}
                                     </p>
                                 </div>
 
@@ -77,8 +77,8 @@ const AuthenticationSignup = () => {
 
                             <div className="text-center text-xs md:text-sm text-muted-foreground mt-6 md:mt-8">
                                 <p>
-                                    {currentLanguage === 'hi' ? '© 2025 LogiChain360. सर्वाधिकार सुरक्षित।'
-                                        : `© ${new Date()?.getFullYear()} LogiChain360. All rights reserved.`}
+                                    {currentLanguage === 'hi' ? '© 2025 NexLogica. सर्वाधिकार सुरक्षित।'
+                                        : `© ${new Date()?.getFullYear()} NexLogica. All rights reserved.`}
                                 </p>
                             </div>
                         </div>

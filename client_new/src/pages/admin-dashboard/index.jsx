@@ -149,12 +149,12 @@ const AdminDashboard = () => {
   return (
     <>
       <Helmet>
-        <title>Admin Dashboard - LogiChain360</title>
+        <title>Admin Dashboard - NexLogica</title>
         <meta name="description" content="Comprehensive logistics operations oversight with AI-powered insights, real-time tracking, and sustainability metrics for strategic decision-making." />
       </Helmet>
       <div className="min-h-screen bg-background">
         <RoleBasedNavigation userRole="admin" connectionStatus={connectionStatus} />
-        
+
         <main className="pt-20 pb-24 px-4 md:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-6 md:mb-8">
@@ -162,22 +162,22 @@ const AdminDashboard = () => {
                 Admin Dashboard
               </h1>
               <p className="text-sm md:text-base text-muted-foreground">
-                Comprehensive logistics operations overview • Last updated: {new Date()?.toLocaleString('en-IN', { 
-                  day: '2-digit', 
-                  month: 'short', 
-                  year: 'numeric', 
-                  hour: '2-digit', 
-                  minute: '2-digit' 
+                Comprehensive logistics operations overview • Last updated: {new Date()?.toLocaleString('en-IN', {
+                  day: '2-digit',
+                  month: 'short',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit'
                 })}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
               {kpiMetrics?.map((metric) => (
-                <MetricCard 
-                    key={metric?.id} 
-                    {...metric} 
-                    onClick={() => navigate(metric.path)}
+                <MetricCard
+                  key={metric?.id}
+                  {...metric}
+                  onClick={() => navigate(metric.path)}
                 />
               ))}
             </div>
@@ -192,9 +192,9 @@ const AdminDashboard = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {aiInsights?.map((insight) => (
-                  <AllInsightCard 
-                    key={insight?.id} 
-                    {...insight} 
+                  <AllInsightCard
+                    key={insight?.id}
+                    {...insight}
                     onClick={() => navigate(insight.path)}
                   />
                 ))}
@@ -210,9 +210,9 @@ const AdminDashboard = () => {
         </main>
 
         <QuickActionButton userRole="admin" onAction={handleQuickAction} />
-        <ToastNotification 
-          notifications={notifications} 
-          onDismiss={handleDismissNotification} 
+        <ToastNotification
+          notifications={notifications}
+          onDismiss={handleDismissNotification}
         />
       </div>
     </>

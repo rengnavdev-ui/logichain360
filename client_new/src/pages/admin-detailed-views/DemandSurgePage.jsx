@@ -21,9 +21,9 @@ const DemandSurgePage = () => {
     return (
         <div className="min-h-screen bg-background p-6">
             <Helmet>
-                <title>Demand Surge Analysis - LogiChain360</title>
+                <title>Demand Surge Analysis - NexLogica</title>
             </Helmet>
-            
+
             <div className="max-w-7xl mx-auto space-y-6">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
@@ -86,14 +86,14 @@ const DemandSurgePage = () => {
                                 <AreaChart data={forecastData}>
                                     <defs>
                                         <linearGradient id="colorPredicted" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="var(--color-primary)" stopOpacity={0.3}/>
-                                            <stop offset="95%" stopColor="var(--color-primary)" stopOpacity={0}/>
+                                            <stop offset="5%" stopColor="var(--color-primary)" stopOpacity={0.3} />
+                                            <stop offset="95%" stopColor="var(--color-primary)" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
                                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                                     <XAxis dataKey="day" stroke="var(--color-muted-foreground)" />
                                     <YAxis stroke="var(--color-muted-foreground)" />
-                                    <Tooltip 
+                                    <Tooltip
                                         contentStyle={{ backgroundColor: 'var(--color-surface)', borderColor: 'var(--color-border)', borderRadius: '8px' }}
                                     />
                                     <Area type="monotone" dataKey="historical" stroke="var(--color-muted-foreground)" fill="transparent" strokeDasharray="5 5" name="Historical" />
@@ -144,8 +144,8 @@ const DemandSurgePage = () => {
                     </div>
                 </div>
 
-                 {/* Risk Simulation */}
-                 <div className="bg-card border border-border rounded-xl p-6">
+                {/* Risk Simulation */}
+                <div className="bg-card border border-border rounded-xl p-6">
                     <h3 className="text-lg font-semibold mb-4">Risk & What-If Simulation</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="p-4 border border-border rounded-lg bg-red-500/5">
@@ -164,7 +164,7 @@ const DemandSurgePage = () => {
                                 <li className="flex justify-between"><span>Asset Utilization</span> <span className="font-bold">94%</span></li>
                             </ul>
                         </div>
-                         <div className="p-4 border border-border rounded-lg bg-blue-500/5">
+                        <div className="p-4 border border-border rounded-lg bg-blue-500/5">
                             <h4 className="font-medium mb-2 text-blue-500">Conservative Plan</h4>
                             <ul className="space-y-2 text-sm text-muted-foreground">
                                 <li className="flex justify-between"><span>SLA Breach</span> <span className="font-bold">12%</span></li>

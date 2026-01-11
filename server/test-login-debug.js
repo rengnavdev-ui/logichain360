@@ -3,10 +3,10 @@ const http = require('http');
 
 function login() {
     const data = JSON.stringify({
-        email: 'admin@logichain360.com',
+        email: 'admin@NexLogica.com',
         password: 'admin123'
     });
-    
+
     const options = {
         hostname: 'localhost',
         port: 5000,
@@ -17,10 +17,10 @@ function login() {
             'Content-Length': data.length
         }
     };
-    
+
     console.log('🔐 Testing login...\n');
     console.log('Request:', data);
-    
+
     const req = http.request(options, (res) => {
         let body = '';
         res.on('data', chunk => body += chunk);
@@ -31,7 +31,7 @@ function login() {
             try {
                 const json = JSON.parse(body);
                 console.log(JSON.stringify(json, null, 2));
-                
+
                 if (json.token) {
                     console.log('\n✅ SUCCESS! Got JWT token');
                     console.log('Token preview:', json.token.substring(0, 50) + '...');
@@ -43,11 +43,11 @@ function login() {
             }
         });
     });
-    
+
     req.on('error', (e) => {
         console.error('Request error:', e);
     });
-    
+
     req.write(data);
     req.end();
 }

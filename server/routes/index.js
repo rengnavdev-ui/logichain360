@@ -8,19 +8,21 @@ const adminRoutes = require('./admin');
 const managerRoutes = require('./manager');
 const driverRoutes = require('./driver');
 const shipmentsRoutes = require('./shipments');
+const gpsRoutes = require('./gps');
 
 // Mount routes
 router.use('/auth', authRoutes);
 router.use('/admin', adminRoutes);
 router.use('/manager', managerRoutes);
 router.use('/driver', driverRoutes);
-router.use('/shipments', shipmentsRoutes); // Legacy endpoint
+router.use('/shipments', shipmentsRoutes);
+router.use('/gps', gpsRoutes);
 
 // API root - show available endpoints
 router.get('/', (req, res) => {
     res.json({
         success: true,
-        name: 'LogiChain360 API',
+        name: 'NexLogica API',
         version: '1.0.0',
         endpoints: {
             auth: '/api/auth - Authentication (login, register)',

@@ -10,12 +10,12 @@ const RouteOptimizationPage = () => {
     return (
         <div className="min-h-screen bg-background p-6">
             <Helmet>
-                 <title>Route Optimization - LogiChain360</title>
+                <title>Route Optimization - NexLogica</title>
             </Helmet>
 
             <div className="max-w-7xl mx-auto space-y-6">
                 {/* Header */}
-                 <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-4 mb-8">
                     <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
                         <ArrowLeft className="w-6 h-6" />
                     </Button>
@@ -45,22 +45,22 @@ const RouteOptimizationPage = () => {
                                     </thead>
                                     <tbody className="divide-y divide-border/50">
                                         <tr>
-                                            <td className="py-3 flex items-center gap-2"><Navigation className="w-4 h-4 text-muted-foreground"/> Distance</td>
+                                            <td className="py-3 flex items-center gap-2"><Navigation className="w-4 h-4 text-muted-foreground" /> Distance</td>
                                             <td className="py-3">1,415 km</td>
                                             <td className="py-3 font-medium text-green-500">1,390 km</td>
                                         </tr>
                                         <tr>
-                                            <td className="py-3 flex items-center gap-2"><Clock className="w-4 h-4 text-muted-foreground"/> Avg Time</td>
+                                            <td className="py-3 flex items-center gap-2"><Clock className="w-4 h-4 text-muted-foreground" /> Avg Time</td>
                                             <td className="py-3">24h 10m</td>
                                             <td className="py-3 font-medium text-green-500">23h 25m</td>
                                         </tr>
                                         <tr>
-                                            <td className="py-3 flex items-center gap-2"><Fuel className="w-4 h-4 text-muted-foreground"/> Fuel Cost</td>
+                                            <td className="py-3 flex items-center gap-2"><Fuel className="w-4 h-4 text-muted-foreground" /> Fuel Cost</td>
                                             <td className="py-3">₹45,200</td>
                                             <td className="py-3 font-medium text-green-500">₹42,800</td>
                                         </tr>
                                         <tr>
-                                            <td className="py-3 flex items-center gap-2"><Leaf className="w-4 h-4 text-muted-foreground"/> CO2</td>
+                                            <td className="py-3 flex items-center gap-2"><Leaf className="w-4 h-4 text-muted-foreground" /> CO2</td>
                                             <td className="py-3">350 kg</td>
                                             <td className="py-3 font-medium text-green-500">310 kg</td>
                                         </tr>
@@ -68,9 +68,9 @@ const RouteOptimizationPage = () => {
                                 </table>
                             </div>
                         </div>
-                        
-                         {/* AI Reasoning */}
-                         <div className="bg-card border border-border rounded-xl p-6">
+
+                        {/* AI Reasoning */}
+                        <div className="bg-card border border-border rounded-xl p-6">
                             <h3 className="text-lg font-semibold mb-4">AI Reasoning</h3>
                             <ul className="space-y-3 text-sm text-muted-foreground">
                                 <li className="flex gap-2">
@@ -100,7 +100,7 @@ const RouteOptimizationPage = () => {
                         </div>
 
                         {/* Savings Breakdown & Actions */}
-                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-card border border-border rounded-xl p-6">
                                 <h3 className="text-lg font-semibold mb-4">Projected Savings</h3>
                                 <div className="space-y-4">
@@ -109,23 +109,23 @@ const RouteOptimizationPage = () => {
                                         <div className="h-2 w-full bg-muted rounded-full overflow-hidden"><div className="h-full bg-green-500 w-[70%]" /></div>
                                     </div>
                                     <div>
-                                         <div className="flex justify-between text-sm mb-1"><span>Time Saved</span> <span className="font-bold">45 mins</span></div>
+                                        <div className="flex justify-between text-sm mb-1"><span>Time Saved</span> <span className="font-bold">45 mins</span></div>
                                         <div className="h-2 w-full bg-muted rounded-full overflow-hidden"><div className="h-full bg-blue-500 w-[40%]" /></div>
                                     </div>
                                     <div>
-                                         <div className="flex justify-between text-sm mb-1"><span>CO2 Reduction</span> <span className="font-bold">40kg</span></div>
+                                        <div className="flex justify-between text-sm mb-1"><span>CO2 Reduction</span> <span className="font-bold">40kg</span></div>
                                         <div className="h-2 w-full bg-muted rounded-full overflow-hidden"><div className="h-full bg-teal-500 w-[55%]" /></div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center space-y-3">
                                 <h3 className="text-lg font-semibold mb-2">Actions</h3>
                                 <Button className="w-full" variant="default">Apply Route to Fleet</Button>
                                 <Button className="w-full" variant="secondary">Test on Selected Shipments</Button>
                                 <Button className="w-full" variant="outline">Schedule Route Review</Button>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
