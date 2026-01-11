@@ -52,9 +52,12 @@ const RoleBasedNavigation = ({ userRole = 'admin', connectionStatus = 'connected
     <>
       <nav className="navbar-container">
         <div className="navbar-content">
-          <div className="navbar-logo">
+          <div
+            className="navbar-logo cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => navigate('/')}
+          >
             <div className="navbar-logo-icon">
-              <Icon name="Truck" size={24} color="var(--color-primary)" />
+              <img src="/logo.png" alt="NexLogica Logo" className="w-8 h-8 object-contain" />
             </div>
             <span className="navbar-logo-text">NexLogica</span>
           </div>

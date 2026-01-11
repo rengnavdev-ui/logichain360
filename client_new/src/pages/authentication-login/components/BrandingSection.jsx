@@ -2,6 +2,8 @@ import React from 'react';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 
+import { Link } from 'react-router-dom';
+
 const BrandingSection = ({ currentLanguage }) => {
   return (
     <div className="relative h-full min-h-[400px] lg:min-h-screen flex flex-col items-center justify-center p-6 md:p-8 lg:p-12 bg-gradient-to-br from-surface via-background to-surface overflow-hidden">
@@ -13,14 +15,14 @@ const BrandingSection = ({ currentLanguage }) => {
 
       </div>
       <div className="relative z-10 max-w-lg text-center">
-        <div className="flex items-center justify-center gap-3 mb-6 md:mb-8">
-          <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/20 backdrop-blur-sm flex items-center justify-center">
-            <Icon name="Truck" size={32} color="var(--color-primary)" />
+        <Link to="/" className="flex items-center justify-center gap-3 mb-6 md:mb-8 hover:opacity-80 transition-opacity">
+          <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden border border-white/20">
+            <img src="/logo.png" alt="NexLogica Logo" className="w-full h-full object-cover p-2" />
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             NexLogica
           </h1>
-        </div>
+        </Link>
 
         <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground">

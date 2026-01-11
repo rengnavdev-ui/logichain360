@@ -27,10 +27,8 @@ const Header = () => {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center shadow-[0_10px_30px_rgba(59,130,246,0.3)] group-hover:rotate-12 transition-transform duration-500">
-                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                    <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 overflow-hidden">
+                        <img src="/logo.png" alt="NexLogica" className="w-full h-full object-cover p-1" />
                     </div>
                     <span className="text-xl font-heading font-black text-white tracking-tighter uppercase whitespace-nowrap">NexLogica</span>
                 </Link>
